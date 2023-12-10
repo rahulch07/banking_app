@@ -11,14 +11,9 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [userId, setUserId] = useState(null);
-  console.log('userId in App.js:', userId); // Add this line for debugging
+  
 
-  // useEffect(() => {
-  //   // Redirect after setUserId has updated the state
-  //   if (userId) {
-  //     window.location.href = '/transactions';
-  //   }
-  // }, [userId]);
+  
 
   useEffect(() => {
     const storedUserId = localStorage.getItem('userId');
