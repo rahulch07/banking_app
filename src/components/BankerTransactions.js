@@ -11,7 +11,7 @@ const BankerTransactions =() => {
   const fetchTransactions = async () => {
     try {
       const response = await api.get(`/accounts/transactions`);
-      console.log(response.data);
+      //console.log(response.data);
       setResponse(response.data);
       // setTransactions(response.data.transactions);
       // setUserName(response.data.username);
