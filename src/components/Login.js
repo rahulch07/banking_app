@@ -9,23 +9,23 @@ const Login = ({setUserId}) => {
   const handleLogin = async () => {
     try {
       const response = await api.post('/users/login', { username, password });
-      console.log(username);
-  console.log(password);
-  console.log("Hello");
+  //     console.log(username);
+  // console.log(password);
+  // console.log("Hello");
       // Check if 'response' and 'response.data' are defined before accessing
       if (response && response.data) {
-        console.log('Login Response:', response);
+        //console.log('Login Response:', response);
       const accessToken = response.data.accessToken;
-      console.log(accessToken);
+      //console.log(accessToken);
       // Store the accessToken securely (e.g., in cookies or localStorage)
       localStorage.setItem('accessToken', accessToken);
 
       //Call setUserId to update userId in the App.js
       setUserId(response.data.userId);
       localStorage.setItem('userId', response.data.userId);
-      console.log("here");
-      console.log(response.data.userId);
-      console.log(response.data.role);
+      // console.log("here");
+      // console.log(response.data.userId);
+      // console.log(response.data.role);
       // Redirect or perform any other action after successful login
       if(response.data.role==='customer'){
       window.location.href = '/transactions';
