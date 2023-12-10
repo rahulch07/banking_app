@@ -1,5 +1,8 @@
 # banking_app
 
+Deployed Link:
+https://banking-app-taupe-five.vercel.app/
+
 Customer login:
 1) username: rahul1, password:1234
 2) username: rahul3, password:1234
