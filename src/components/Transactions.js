@@ -2,69 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 
-// const Transactions = ({ userId }) => {
-//   const [transactions, setTransactions] = useState([]);
-//   const [amount, setAmount] = useState('');
-
-//   useEffect(() => {
-//     const fetchTransactions = async () => {
-//       try {
-//         const response = await api.get(`/accounts/${userId}/transactions`);
-//         setTransactions(response.data);
-//       } catch (error) {
-//         console.error('Error fetching transactions', error.response.data.message);
-//       }
-//     };
-
-//     fetchTransactions();
-//   }, [userId]);
-
-//   const handleDeposit = async () => {
-//     try{
-//     // Implement deposit logic
-//     const response = await api.post(`/accounts/${userId}/deposit`, { amount });
-//       console.log('Deposit successful:', response.data);
-//       // Optionally, update the transactions state or perform other actions
-//     } catch (error) {
-//       console.error('Deposit failed', error.response.data.message);
-//     }
-//   };
-
-//   const handleWithdrawal = async () => {
-//     try{
-//     // Implement withdrawal logic
-//     const response = await api.post(`/accounts/${userId}/withdrawal`, { amount });
-//       console.log('Withdrawal successful:', response.data);
-//       // Optionally, update the transactions state or perform other actions
-//     } catch (error) {
-//       console.error('Withdrawal failed', error.response.data.message);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Transactions</h2>
-//       <ul>
-//         {transactions.map((transaction) => (
-//           <li key={transaction.timestamp}>
-//             {transaction.type}: {transaction.amount} on {new Date(transaction.timestamp).toLocaleString()}
-//           </li>
-//         ))}
-//       </ul>
-//       <label>Amount:</label>
-//       <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
-//       <br />
-//       <button onClick={handleDeposit}>Deposit</button>
-//       <button onClick={handleWithdrawal}>Withdraw</button>
-//     </div>
-//   );
-// };
-
-// export default Transactions;
-
 const Transactions = ({ userId }) => {
-  console.log("here2");
-  console.log(userId);
+  // console.log("here2");
+  // console.log(userId);
   const [transactions, setTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
   const [transactionType, setTransactionType] = useState('deposit');
@@ -89,10 +29,7 @@ const Transactions = ({ userId }) => {
     fetchTransactions();
     }, [userId]);
 
-    // const alertVisible = () =>{
-    //   if(transactionType==='withdraw'&& amount>balance){
-    //     setAlert(true);
-    //   }
+    
 
   const handleTransaction = async () => {
     try {
@@ -110,9 +47,9 @@ const Transactions = ({ userId }) => {
     }
       setBalance(response.data.balance);
 
-      console.log(transactionType);
-      console.log(amount);
-      console.log(balance);
+      // console.log(transactionType);
+      // console.log(amount);
+      // console.log(balance);
 
       if(transactionType==='withdrawal' && amount>balance){
         setAlert(true);
@@ -120,7 +57,7 @@ const Transactions = ({ userId }) => {
       //alert('Insufficient funds. Cannot complete withdrawal.');
 
       }
-      console.log(response);
+      //console.log(response);
 
       console.log(showAlert);
       //new
